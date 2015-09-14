@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="415.0" prefWidth="619.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <right>
+      <ScrollPane prefHeight="400.0" prefWidth="207.0" BorderPane.alignment="CENTER">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="224.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="385.0" prefWidth="192.0" AnchorPane.bottomAnchor="-165.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="4.0">
+                     <children>
+                        <Label text="Portal Location">
+                           <VBox.margin>
+                              <Insets top="4.0" />
+                           </VBox.margin>
+                        </Label>
+                        <GridPane prefWidth="192.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="96.0" minWidth="10.0" prefWidth="80.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="162.0" minWidth="10.0" prefWidth="120.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label alignment="TOP_LEFT" prefHeight="16.0" text="Latitude">
+                                 <GridPane.margin>
+                                    <Insets left="4.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label prefHeight="16.0" text="Longitude" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="4.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="latitude" alignment="TOP_RIGHT" onAction="#updateGoogleMap" promptText="Latitude" text="35.685175" GridPane.columnIndex="1" />
+                              <TextField fx:id="longitude" alignment="CENTER_RIGHT" onAction="#updateGoogleMap" promptText="Longitude" text="139.752800" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                        <AnchorPane prefHeight="19.0" prefWidth="192.0">
+                           <children>
+                              <Button layoutX="147.0" mnemonicParsing="false" onAction="#resetMapCenter" text="Map Center" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                        <Label text="Resonator Distance [m]">
+                           <VBox.margin>
+                              <Insets top="8.0" />
+                           </VBox.margin>
+                        </Label>
+                        <GridPane prefHeight="89.0" prefWidth="137.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="142.0" minWidth="10.0" prefWidth="68.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="141.0" minWidth="10.0" prefWidth="69.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="141.0" minWidth="10.0" prefWidth="63.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <TextField fx:id="resonatorN" alignment="CENTER_RIGHT" onAction="#updateGoogleMap" text="40" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="resonatorW" alignment="CENTER_RIGHT" onAction="#updateGoogleMap" text="40" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets top="1.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="resonatorSW" alignment="CENTER_RIGHT" onAction="#updateGoogleMap" text="40" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets top="1.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="resonatorS" alignment="CENTER_RIGHT" onAction="#updateGoogleMap" text="40" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets top="1.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="resonatorSE" alignment="CENTER_RIGHT" onAction="#updateGoogleMap" text="40" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets top="1.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="resonatorE" alignment="CENTER_RIGHT" onAction="#updateGoogleMap" text="40" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets top="1.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="resonatorNW" alignment="CENTER_RIGHT" onAction="#updateGoogleMap" text="40">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets top="1.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="resonatorNE" alignment="CENTER_RIGHT" onAction="#updateGoogleMap" text="40" GridPane.columnIndex="2">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets top="1.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                           </children>
+                        </GridPane>
+                        <Label text="Xmp Burster" />
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="91.0" minWidth="10.0" prefWidth="65.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" minWidth="10.0" prefWidth="127.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Level">
+                                 <GridPane.margin>
+                                    <Insets left="4.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <ComboBox fx:id="level" onAction="#updateGoogleMap" prefWidth="150.0" visibleRowCount="8" GridPane.columnIndex="1" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </right>
+   <center>
+      <WebView fx:id="map" maxHeight="400.0" maxWidth="400.0" minHeight="400.0" minWidth="400.0" prefHeight="400.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+         </BorderPane.margin>
+      </WebView>
+   </center>
+</BorderPane>
